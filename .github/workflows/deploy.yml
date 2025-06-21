@@ -22,7 +22,10 @@ jobs:
       - name: Run npm install and tests
         run: |
           npm install
-          npm test || echo "No tests yet"
+          node app.js &   # run the server in the background
+          sleep 3
+          npm test
+
 
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.0.3
