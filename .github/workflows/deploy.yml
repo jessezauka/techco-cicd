@@ -25,6 +25,7 @@ jobs:
           node app.js &   # run the server in the background
           sleep 3
           npm test
+          npm run build
 
 
       - name: Deploy to EC2 via SSH
